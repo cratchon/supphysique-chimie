@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --navy: #16233d;
+  --navy-light: #223257;
+  --paper: #f7f4ee;
+  --paper-card: #ffffff;
+  --gold: #b8862f;
+  --gold-soft: #e8dcc3;
+  --ink: #23262b;
+  --ink-soft: #5a6472;
+  --line: #dcd6c8;
+  --max-width: 1040px;
+
+  --font-display: 'Lora', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+}
+
+a { color: var(--navy); }
+a:hover, a:focus-visible { color: var(--gold); }
+
+/* ===== Header ===== */
+.site-header {
+  background: var(--navy);
+  color: var(--paper);
+  padding: 0;
+}
+
+.site-header .header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 1rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--paper);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.site-title span {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  opacity: 0.85;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.15rem;
+}
+
+.site-nav a:hover, .site-nav a:focus-visible, .site-nav a.active {
+  opacity: 1;
+  color: var(--paper);
+  border-bottom-color: var(--gold);
+}
+
+.header-rule {
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold) 40%, var(--navy-light) 40%, var(--navy-light) 100%);
+}
+
+/* ===== Breadcrumb ===== */
+.breadcrumb {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+}
+
+.breadcrumb a { color: var(--ink-soft); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb .sep { margin: 0 0.4rem; opacity: 0.5; }
+
+/* ===== Main layout ===== */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ===== Hero (home page) ===== */
+.hero {
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 2.5rem;
+}
+
+.hero .eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  max-width: 24ch;
+}
+
+.hero p {
+  max-width: 55ch;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+/* ===== Level cards grid ===== */
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.level-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--navy);
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.level-card:hover, .level-card:focus-visible {
+  border-top-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.level-card .level-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.level-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0.4rem 0 0.5rem;
+  color: var(--ink);
+}
+
+.level-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+/* ===== Subject / chapter listing (level pages) ===== */
+.subject-block {
+  margin-bottom: 2.5rem;
+}
+
+.subject-block h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--gold-soft);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chapter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.chapter-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  padding: 0.65rem 0.85rem;
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+}
+
+.chapter-list .num {
+  font-family: var(--font-mono);
+  color: var(--gold);
+  font-size: 0.85rem;
+  min-width: 1.6rem;
+}
+
+.chapter-list a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.chapter-list a:hover { color: var(--gold); }
+
+.chapter-list .status {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--ink-soft);
+  opacity: 0.7;
+}
+
+/* ===== Course page ===== */
+.course h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.course .meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+
+.course section {
+  margin-bottom: 2rem;
+}
+
+.course h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--navy);
+  margin-top: 2rem;
+}
+
+.course-box {
+  background: var(--paper-card);
+  border-left: 3px solid var(--gold);
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.course-box .label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.8rem; }
+  .site-header .header-inner { flex-direction: column; align-items: flex-start; }
+}
